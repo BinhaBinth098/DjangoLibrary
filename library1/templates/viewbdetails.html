@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<style>
+.card {
+  background-color: #a4a3a3;
+  }
+  body{
+  background-color:#E4DFDE;}
+</style>
+<h2 class="text-center mt-3">BOOK DETAILS</h2>
+<!--{{books.title}}-->
+<!--{{books.author}}-->
+<!--{{books.language}}-->
+<div class="card mb-3 mx-auto p-4" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="{{books.cover.url}}" class=" rounded-start" height="240px" width="100%">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body ms-5">
+        <h5 class="card-title text-light mb-3 fw-bold">DETAILS</h5>
+        <p class="card-text"><b>Title : </b>{{books.title}}</p>
+        <p class="card-text"><b>Author: </b>{{books.author}}</p>
+        <p class="card-text"><b>Language : </b>{{books.language}}</p>
+        <a class="btn btn-danger mt-3">Download</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

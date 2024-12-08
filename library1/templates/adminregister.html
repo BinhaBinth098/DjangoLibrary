@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<style>
+    body
+    {
+    background-color:#E4DFDE;
+    }
+</style>
+<h2 class="text-center my-2 fw-bold">Admin Register</h2>
+<form method="POST" enctype="multipart/form-data" class="mx-4">
+  {% csrf_token %}
+<div class=" mx-2">
+  <label  class="form-label">Username :</label>
+  <input type="text" class="form-control" name="u" placeholder="username">
+</div>
+<div class="mb-3 mx-2">
+  <label  class="form-label">Password :</label>
+  <input type="password" class="form-control" name="p" placeholder="password">
+</div>
+<div class="mb-3 mx-2">
+  <label  class="form-label">Confirm Password :</label>
+  <input type="password" class="form-control" name="cp" placeholder="Confirm password">
+</div>
+<div class="mb-3 mx-2">
+  <label  class="form-label">First name :</label>
+  <input type="text" class="form-control" name="f" placeholder="first name">
+</div>
+<div class="mb-3 mx-2">
+  <label  class="form-label">Last name :</label>
+  <input type="text" class="form-control" name="l" placeholder="last name">
+</div>
+<div class="mb-3 mx-2">
+  <label  class="form-label">Email :</label>
+  <input type="email" class="form-control" name="e" placeholder="email">
+</div>
+<div class="mb-3 mx-2">
+  <label  class="form-label">Phone :</label>
+  <input type="number" class="form-control" name="ph" placeholder="phone">
+</div>
+<div class="mb-3 mx-2">
+  <label  class="form-label">Address :</label>
+  <input type="text" class="form-control" name="ad" placeholder="Address">
+</div>
+
+<div class=" mx-2">
+<input type="submit" class="form-control" value="Register">
+</div>
+</form>
+{% endblock %}

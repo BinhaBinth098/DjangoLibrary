@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<style>
+    body
+    {
+    background-color:#E4DFDE;
+    }
+</style>
+<h2 class="text-center my-3">VIEW BOOK</h2>
+<!--{{books}}-->
+<table class="table table-striped">
+    <tr>
+        <th>Cover</th><th>TITLE</th><th>AUTHOR</th><th>LANGUAGE</th><th>PDF</th>
+        <th>VIEW</th><th>EDIT</th><th>DELETE</th>
+    </tr>
+    {% for i in books %}
+    <tr>
+        <td class="py-3"><img src="{{i.cover.url}}" height="100px" width="80px"></td>
+        <td class="py-5">{{i.title}}</td>
+        <td class="py-5">{{i.author}}</td>
+        <td class="py-5">{{i.language}}</td>
+        <td class="py-5"><a href="{{i.pdf.url}}" class="text-secondary">DOWNLOAD</a></td>
+        <td class="py-5"><a href="{% url 'books:viewbdetails' i.id %}"  class="btn  btn-outline-secondary">view</a></td>
+        <td class="py-5"><a href="{% url 'books:edit' i.id %}"  class="btn  btn-outline-secondary">edit</a></td>
+        <td class="py-5"><a href="{% url 'books:delete' i.id %}"  class="btn  btn-outline-secondary">delete</a></td>
+    </tr>
+    {% endfor %}
+</table>
+<!--<ol>-->
+<!--    {% for i in books %}-->
+<!--    <li>BOOK DETAILS</li>-->
+<!--        <ul>-->
+<!--            <li>Title:{{i.title}}</li>-->
+<!--            <li>Author:{{i.author}}</li>-->
+<!--            <li>Landuage:{{i.language}}</li>-->
+<!--        </ul>-->
+<!--    {% endfor %}-->
+<!--</ol>-->
+{% endblock %}

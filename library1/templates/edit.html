@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<style>
+    body
+    {
+    background-color:#E4DFDE;
+    }
+</style>
+<h2 class="text-center my-3">ADD BOOK DETAILS</h2>
+<form method="POST" enctype="multipart/form-data" class="mx-4">
+  {% csrf_token %}
+<div class="mb-3 mx-2">
+  <label  class="form-label">Title :</label>
+  <input type="text" class="form-control" name="t" value="{{books.title}}" placeholder="Title">
+</div>
+<div class="mb-3 mx-2">
+  <label  class="form-label">Author :</label>
+  <input type="text" class="form-control" name="a" value="{{books.author}}" placeholder="Author">
+</div>
+<div class="mb-3 mx-2">
+  <label  class="form-label">Language :</label>
+  <input type="text" class="form-control" name="l" value="{{books.language}}" placeholder="Language">
+</div>
+<div class="mb-3 mx-2">
+  <label  class="form-label">Cover :</label>
+  <img src="{{ books.cover.url }}" height="120px" width="100px" class="mb-2">
+  <input type="file" class="form-control" name="i">
+</div>
+<div class="mb-3 mx-2">
+  <label  class="form-label">pdf :</label>
+  <a href="{{books.pdf.url}}">{{books.pdf}}</a>
+  <input type="file" class="form-control" name="pd">
+</div>
+
+<div class=" mx-2">
+<input type="submit" class="form-control" value="Edit Book">
+</div>
+</form>
+{% endblock %}
