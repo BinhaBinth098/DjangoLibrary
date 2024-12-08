@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+
+<form method="POST" enctype="multipart/form-data">
+  {% csrf_token %}
+  <div class="mb-3 mx-2">
+  <label  class="form-label">Id :</label>
+        <input type="text" class="form-control" name="e" value="{{employ.emid}}" placeholder="employee id">
+
+</div>
+    <div class="mb-3 mx-2">
+  <label  class="form-label">Name :</label>
+        <input type="text" class="form-control" name="n" value="{{employ.name}}" placeholder="name">
+
+</div>
+<div class="mb-3 mx-2">
+  <label  class="form-label">Age :</label>
+  <input type="number" class="form-control" name="a" value="{{employ.age}}" placeholder='age'>
+</div>
+<div class="mb-3 mx-2">
+  <label  class="form-label">Gender :</label>
+  <input type="text" class="form-control" name="g" value="{{employ.gender}}" placeholder="gender">
+</div>
+<div class="mb-3 mx-2">
+  <label  class="form-label">Place :</label>
+  <input type="text" class="form-control" name="pl" value="{{employ.place}}" placeholder="place">
+</div>
+<div class="mb-3 mx-2">
+  <label  class="form-label">Designation :</label>
+  <input type="text" class="form-control" name="d" value="{{employ.designation}}" placeholder="designation">
+</div>
+<div class="mb-3 mx-2">
+  <label  class="form-label">Image :</label>
+  <img src="{{ employ.image.url }}" height="200px" width="150px" class="mb-3">
+
+  <input type="file" class="form-control" name="i" >
+</div>
+
+
+<div class=" mx-2">
+<input type="submit" class="form-control" value="Submit">
+</div>
+</form>
+
+
+{% endblock %}
